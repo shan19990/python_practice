@@ -2,8 +2,9 @@ from user import User
 
 class Admin:
     
-    def __init__(self):
-        self.user = "admin"
+    def __init__(self,username,password):
+        self.user = username
+        self.password = password
         self.user_list = []
      
     def create_user(self):
@@ -24,6 +25,11 @@ class Admin:
             else:
                 print("user not found")
                 
-    def show_books(self):
-        Books.book_list()
+    def check_if_correct_login(self,user,password):
+        if self.user == user and self.password == password:
+            return True
+        else:
+            return False
+    
+
         
